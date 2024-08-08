@@ -1,0 +1,458 @@
+body {
+    background-color: #000;
+    color: #ddd;
+}
+
+#AppLine {
+    position: fixed;
+    z-index: 8;
+    bottom: 0;
+    width: 50vw;
+    height: 5px;
+    background-color: black;
+    border-radius: 100px;
+    left: 50%; 
+    transform: translateX(-50%);
+    margin-bottom: 5px;
+}
+
+#SystemUI {
+    z-index: 4;
+    color: #000;
+    backdrop-filter: blur(20px);
+    background-color: transparent;
+    font-family: 'SFPro';
+    height: auto; /* Изменено на auto */
+    width: 100%;
+    position: fixed;
+    top: 0;
+    margin-top: 15px;
+    transition: 0.5s;
+}
+
+#Time {
+    z-index: 5;
+    color: #000;
+    background-color: transparent;
+    font-family: 'SFPro';
+    height: auto;
+    width: 100%;
+    font-size: 18px;
+    margin-top: 3px;
+    position: fixed;
+    left: 0;
+    margin-left: 75px;
+    font-weight: bold;
+    margin-top: 10px;
+    transition: 0.5s;
+    will-change: filter, scale, margin-left;
+}
+
+.DynmicIsland {
+    background-color: #000;
+    height: 40px;
+    width: 135px;
+    margin-left: -7px;
+    left: 50%; 
+    transform: translateX(-50%);
+    margin-top: -5px;
+    position: fixed;
+    top: 0;
+    z-index: 7;
+    display: flex;
+    align-items: center;
+    border-radius: 1000px;
+    transition: 0.5s;
+}
+
+.DynmicIsland.AnimDynamic {
+    height: 45px;
+    margin-top: -7px;
+    width: 160px;
+    transition: 0.5s;
+}
+
+.DynmicIsland.Action {
+    height: 64px;
+    width: calc(100vw - 25px);
+}
+
+.DynmicIsland.Check {
+    height: 45px;
+    width: 300px;
+}
+
+.DynamicContent {
+    position: fixed;
+    color: #000;
+    filter: blur(64px);
+    margin-right: 25px;
+    right: 0;
+    z-index: 8;
+    display: flex;
+    transition: 0.2s;
+}
+
+.DynamicContent.show {
+    color: #eee;
+    filter: blur(0px);
+    transition: 0.2s;
+}
+
+@keyframes shake {
+    0% { transform: translateX(-50%); }
+    20% { transform: translateX(calc(-50% - 20px)); }
+    40% { transform: translateX(calc(-50% + 20px)); }
+    60% { transform: translateX(calc(-50% - 6px)); }
+    80% { transform: translateX(calc(-50% + 10px)); }
+    100% { transform: translateX(-50%); }
+}
+
+.shake {
+    animation: shake 0.5s ease;
+}
+
+#battery {
+    z-index: 5;
+    height: 35px;
+    width: 35px;
+    object-fit: cover;
+    position: fixed;
+    right: 0;
+    margin-right: 30px;
+    transition: 0.5s;
+}
+
+#wifi {
+    z-index: 5;
+    height: 20px;
+    width: 20px;
+    object-fit: cover;
+    position: fixed;
+    right: 0;
+    margin-top: 6px;
+    margin-right: 75px;
+    transition: 0.5s;
+}
+
+#Icons {
+    z-index: 5;
+    height: 20px;
+    object-fit: cover;
+    position: fixed;
+    left: 0;
+    transition: 0.5s;
+}
+
+.Icon {
+    z-index: 5;
+    height: 20px;
+    width: 20px;
+    margin-right: 5px;
+    margin-top: 6px;
+    transition: 0.5s;
+}
+
+.InvertImg {
+    filter: invert(1000%) brightness(200%);
+    transition: 0.5s;
+}
+
+.View {
+    z-index: 1;
+    background-color: #fff;
+    color: #000;
+    font-family: 'SFPro', Arial, sans-serif;
+    font-size: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    padding: 25px;
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 100vh;
+    width: 88.5vw;
+    transition: 0.5s;
+}
+
+.AddView {
+    z-index: 2;
+    background-color: #fff;
+    color: #0f0f0f;
+    font-family: 'SFPro', Arial, sans-serif;
+    font-size: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    margin-left: 100%;
+    padding: 25px;
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 100vh;
+    width: 88.5vw;
+    transition: 0.5s;
+}
+
+.AddView.show {
+    margin-left: 0%;
+    transition: 0.5s;
+}
+
+.View.UnderView {
+    margin-left: -50%;
+    background-color: #ddd;
+    transition: 0.5s;
+}
+
+.Color.blue {
+    color: #007AFF;
+}
+
+.Color.gray {
+    color: #8E8E93;
+}
+
+.Color.black {
+    color: #000000;
+}
+
+.Color.green {
+    color: #34C759;
+}
+
+.Color.yellow {
+    color: #FFCC00;
+}
+
+.Color.red {
+    color: #FF3B30;
+}
+
+.Color.orange {
+    color: #FF9500;
+}
+
+.Color.pink {
+    color: #FF2D55;
+}
+
+.Color.purple {
+    color: #5856D6;
+}
+
+.Color.white {
+    color: #eee;
+}
+
+/* Regular */
+.Font.regular {
+    font-family: 'SFPro', Arial, sans-serif;
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Bold */
+.Font.bold {
+    font-family: 'SFPro', Arial, sans-serif;
+    font-weight: bold;
+    font-style: normal;
+}
+
+.Font.title {
+    font-family: 'SFPro', Arial, sans-serif;
+    font-weight: bold;
+    font-style: normal;
+    font-size: 35px;
+}
+
+/* Italic */
+.Font.italic {
+    font-family: 'SFPro', Arial, sans-serif;
+    font-weight: normal;
+    font-style: italic;
+}
+
+/* Bold Italic */
+.Font.bold-italic {
+    font-family: 'SFPro', Arial, sans-serif;
+    font-weight: bold;
+    font-style: italic;
+}
+
+/* Примеры классов для иконок SFPro */
+
+/* Иконка Heart */
+.Icon.heart::before {
+    content: "\2764"; /* Unicode символ для сердца в SFPro */
+    font-family: 'SFPro', Arial, sans-serif; /* Убедитесь, что указан правильный шрифт */
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Иконка Star */
+.Icon.star::before {
+    content: "\2605"; /* Unicode символ для звезды в SFPro */
+    font-family: 'SFPro', Arial, sans-serif;
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Иконка Checkmark */
+.Icon.checkmark::before {
+    content: "\2713"; /* Unicode символ для галочки в SFPro */
+    font-family: 'SFPro', Arial, sans-serif;
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Иконка X */
+.Icon.x::before {
+    content: "\2715"; /* Unicode символ для крестика в SFPro */
+    font-family: 'SFPro', Arial, sans-serif;
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Иконка Home */
+.Icon.home::before {
+    content: "\e900"; /* Unicode символ для домика в SFPro */
+    font-family: 'SFPro', Arial, sans-serif;
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Иконка Arrow Up */
+.Icon.arrow-up::before {
+    content: "\2191"; /* Unicode символ для стрелки вверх в SFPro */
+    font-family: 'SFPro', Arial, sans-serif;
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Иконка Menu */
+.Icon.menu::before {
+    content: "\2630"; /* Unicode символ для меню в SFPro */
+    font-family: 'SFPro', Arial, sans-serif;
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Добавьте классы для остальных иконок SFPro по аналогии */
+
+.Magnit.leading {
+    position: fixed;
+    left: 0;
+}
+
+.Magnit.trailing {
+    position: fixed;
+    right: 0;
+}
+
+.Magnit.top {
+    position: fixed;
+    top: 0;
+    margin-top: 50px;
+}
+
+.Magnit.bottom {
+    position: fixed;
+    bottom: 0;
+    margin-bottom: 137px;
+}
+
+.HStack {
+    display: flex;
+    flex-direction: row;
+}
+
+
+.VStack {
+    display: flex;
+    flex-direction: column;
+}
+
+.View.UnderModal {
+    height: 97vh;
+    width: 80vw;
+    border-radius: 10px;
+    transform: translateX(-50%) translateY(3vh);
+    background-color: #ddd;
+}
+
+.Modal {
+    height: 93vh;
+    width: 100vw;
+    position: fixed;
+    bottom: 0;
+    z-index: 3;
+    background-color: #eee;
+    color: #000;
+    box-shadow: black 0px 14px 14px 0px;
+    margin-left: -8px;
+    border-radius: 15px 15px 0px 0px;
+    margin-bottom: -93vh;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    touch-action: none; /* Prevent default touch behavior */
+    font-family: 'SFPro', Arial, sans-serif;
+}
+
+.Show {
+    margin-bottom: 0vh;
+}
+
+.Padding {
+    padding: 25px;
+}
+
+button {
+    width: 100%;
+    height: 7vh;
+    border: none;
+    background-color: transparent;
+    color: #007AFF;
+    font-size: 17px;
+    border-radius: 7px;
+}
+
+/* Font-face rules */
+@font-face {
+    font-family: 'SFPro';
+    src: url('fonts/SFPro/SFProText-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'SFPro';
+    src: url('fonts/SFPro/SFProText-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'SFPro';
+    src: url('fonts/SFPro/SFProText-RegularItalic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'SFPro';
+    src: url('fonts/SFPro/SFProText-BoldItalic.ttf') format('truetype');
+    font-weight: bold;
+    font-style: italic;
+}

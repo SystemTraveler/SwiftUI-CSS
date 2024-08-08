@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SwiftUI-like Design with CSS</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="Modal" id="ModalView">
+    </div>
+    <div id="SystemUI" class="SystemUI">
+            <div id="Time">9:41</div>
+            <div class="DynmicIsland" id="DynmicIsland" onclick="DynamicAct()">
+                <div id="DynamicContent" class="DynamicContent">Звонок</div>
+            </div>
+            <div class="HStack">
+                <img id="wifi" src="wifi.png">
+                <img id="battery" src="battery.png">
+            </div>
+        </div>
+
+    <div id="AppLine"></div>
+    
+    <div class="AddView" id="AddView">
+        <div class="HStack Magnit leading Magnit top Padding">
+            <div class="Color blue" onclick="closeView('AddView')">Назад</div>
+        </div>
+    </div>
+    <div class="View" id="View">
+        <button onclick="openModal('ModalView', 'View')">Открыть модальное окно</button>
+        <div class="Padding"></div>
+        <button class="Padding" onclick="DynamicInfo()">Динамический остров</button>
+        <div class="Padding"></div>
+        <button class="Padding" onclick="DynamicChange()">Действие</button>
+        <div class="Padding"></div>
+        <button class="Padding" onclick="openView('AddView')">Открыть View</button>
+        <div class="HStack Magnit leading Magnit top Padding">
+            <div class="Font title">Главная</div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
