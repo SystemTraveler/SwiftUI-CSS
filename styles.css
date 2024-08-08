@@ -41,9 +41,9 @@ body {
     margin-top: 3px;
     position: fixed;
     left: 0;
-    margin-left: 75px;
+    margin-left: 50px;
     font-weight: bold;
-    margin-top: 10px;
+    margin-top: 5px;
     transition: 0.5s;
     will-change: filter, scale, margin-left;
 }
@@ -120,6 +120,7 @@ body {
     position: fixed;
     right: 0;
     margin-right: 30px;
+    margin-top: -5px;
     transition: 0.5s;
 }
 
@@ -130,7 +131,7 @@ body {
     object-fit: cover;
     position: fixed;
     right: 0;
-    margin-top: 6px;
+    margin-top: 2px;
     margin-right: 75px;
     transition: 0.5s;
 }
